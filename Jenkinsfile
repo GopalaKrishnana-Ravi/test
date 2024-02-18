@@ -2,14 +2,22 @@ pipeline {
     agent any
     
     stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the repository to ensure all files are available
+                git 'https://github.com/GopalaKrishnana-Ravi/test.git'
+            }
+        }
         stage('Build') {
             steps {
-                sh 'chmod +x sample_script.sh' // Make sure the script is executable
+                // Ensure the script is executable
+                sh 'chmod +x sample_script.sh'
             }
         }
         stage('Execute Script') {
             steps {
-                sh './sample_script.sh' // Execute the script
+                // Execute the script
+                sh './sample_script.sh'
             }
         }
     }
