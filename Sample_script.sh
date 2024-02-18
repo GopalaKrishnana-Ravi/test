@@ -12,3 +12,6 @@ echo 'Hellow Jenkins!'
 
 echo 'Commit first chnage'
 
+date
+
+echo 'second commit'
